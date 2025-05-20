@@ -1,1 +1,44 @@
-<p>fruit-list works!</p>
+<div class="fruit-list">
+@for(item of fruitlist; track item.name; let i = $index){
+<section class="fruit-item">
+  <div>
+    <img src="./assets/img/fruits/{{ item.img }}" alt="{{ item.name }}" />
+  </div>
+  <div>
+    <h1>{{ item.name }}</h1>
+
+    <div class="rating">
+        <p class="bold">Bewertung:</p>
+
+    </div>
+
+    <div class="type"> 
+        <p  class="bold">Art:</p>
+        <p>{{item.genus}}</p>
+    </div>
+
+    <div class="description">
+        <p class="bold">Beschreibung:</p>
+        <p>{{item.description}}</p>
+    </div>
+
+    <div class="comment-section">
+        <div class="comments">
+            @for(item of item.reviews; track item.name;){
+                <p>{{item.name}}  :</p>
+                <p>{{item.text}}</p>
+                
+            }
+            @empty{
+                    Kein Kommentar verfügbar!
+                }
+        </div>
+        <div class="send-comment">
+        <input type="text" placeholder="_____________________________________" />
+        <img class="arrow" onclick="send()" src="./assets/img/arrow-35-32.png">
+        </div>
+    </div>
+  </div>
+</section>
+}
+</div>

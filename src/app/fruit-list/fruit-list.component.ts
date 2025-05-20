@@ -1,12 +1,15 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-fruit-list',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './fruit-list.component.html',
   styleUrl: './fruit-list.component.scss'
 })
 export class FruitListComponent {
+
+
 
   fruitlist = [
     {
@@ -31,7 +34,7 @@ export class FruitListComponent {
       description: "Die Steinfrucht der Sauerkirsche hat einen Durchmesser von 15 bis 20 mm, ist etwa kugelförmig, etwas höher, breiter, unbehaart, frostfrei, hell- bis dunkelrot. Das Fruchtfleisch ist sauer und rot oder farblos.",
       genus: "Pflanzenart aus der Familie der Rosengewächse (Rosaceae)",
       stars: 3.7,
-      reviews:[{name: "Horst", text: "definitiv nicht süß"}],
+      reviews:[],
     },
     {
       name: "Erdbeere",
