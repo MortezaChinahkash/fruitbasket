@@ -1,15 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { SingleFruitComponent } from './single-fruit/single-fruit.component';
 
 @Component({
   selector: 'app-fruit-list',
-  imports: [CommonModule],
+  imports: [CommonModule, SingleFruitComponent],
   templateUrl: './fruit-list.component.html',
   styleUrl: './fruit-list.component.scss'
 })
 export class FruitListComponent {
 
-
+fontColorGood = "green"
+fontColorBad = "red"
 
   fruitlist = [
     {
@@ -62,5 +64,11 @@ export class FruitListComponent {
     },
   ]
 
+
+  getStarType(count: number, stars: number) {
+  if (stars >= count) return "full";
+  if (stars >= count - 0.5) return "half";
+  return "empty";
+}
 
 }
